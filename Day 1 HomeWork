@@ -1,0 +1,27 @@
+import java.util.Random;
+import java.util.Scanner;
+public class GameForOOP {
+    public static void main(String[] args){
+        int Tryes = 10;
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int RandomNumber = random.nextInt(100)+1;
+        while (Tryes>0){
+            System.out.printf("Input a number: ");
+            int UserInt = scanner.nextInt();
+            if (UserInt > RandomNumber){
+                System.out.println("Your number bigger than my number!");
+                System.out.println("You have "+(Tryes -1)+" Tryes!");
+            }
+            else if(UserInt < RandomNumber){
+                System.out.println("Your number lower than my number!");
+                System.out.println("You have "+(Tryes - 1)+" Tryes!");
+            }
+            else{
+                System.out.println("You WIN!");
+                break;
+            }
+            Tryes = Tryes-1;
+        }
+    }
+}
